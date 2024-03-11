@@ -16,8 +16,4 @@ repository you will be able to find every project that
 was completed for the PLNEB course in 2023/2024's 
 academic year.
 ---
-<div style="text-align:center">
-    <img src="Dados/eu.png" style="width: 100px;
-    height: auto; border-radius: 10%">
-</div>
-
+![eu.png](Dados%2Feu.png)
