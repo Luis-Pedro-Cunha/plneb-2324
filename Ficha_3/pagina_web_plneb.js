@@ -368,8 +368,9 @@ function revealDiv1(item, character) {
     var allCharacterDivItemsDescr = [];
 
     allItems.forEach(function(item){
-        allCharacterDivItemsDescr.push(item[0]);
-        allCharacterDivItemsDescr.push(item[1]);
+        item.forEach(function (subitem){
+            allCharacterDivItemsDescr.push(subitem);
+        })
     });
 
     console.log('All Character Items Descriptions: ', allCharacterDivItemsDescr);
@@ -415,8 +416,9 @@ function revealDiv2(item, character) {
     var allCharacterDivItemsDescr = [];
 
     allItems.forEach(function(item){
-        allCharacterDivItemsDescr.push(item[0]);
-        allCharacterDivItemsDescr.push(item[1]);
+        item.forEach(function (subitem){
+            allCharacterDivItemsDescr.push(subitem);
+        })
     });
 
     console.log('All Character Items Descriptions: ', allCharacterDivItemsDescr);
