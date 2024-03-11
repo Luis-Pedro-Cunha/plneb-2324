@@ -1,0 +1,1076 @@
+.pagina-web {
+    background-size: 120%;
+    background-position: center center;
+    background-attachment: fixed;
+    animation: slideShow1 30s infinite;
+}
+
+@keyframes slideShow1 {
+    0% {
+        background-image: url('../Dados/Genshin_html_images/General/Mondstadt.png');
+    }
+    16.5% {
+        background-image: url('../Dados/Genshin_html_images/General/Mondstadt.png');
+    }
+    33% {
+        background-image: url('../Dados/Genshin_html_images/General/Liyue.jpg');
+    }
+    49.5% {
+        background-image: url('../Dados/Genshin_html_images/General/Liyue.jpg');
+    }
+    66% {
+        background-image: url('../Dados/Genshin_html_images/General/Inazuma.jpg');
+    }
+    82.5% {
+        background-image: url('../Dados/Genshin_html_images/General/Inazuma.jpg');
+    }
+    100% {
+        background-image: url('../Dados/Genshin_html_images/General/Mondstadt.png');
+    }
+}
+
+/*---------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../Dados/Genshin_html_images/zh-cn.woff2') format('woff2'), url('../Dados/Genshin_html_images/zh-cn.woff') format('woff');
+
+}
+
+.cabecalho {
+    position: relative;
+    background-color: rgba(57,52,52,0.9);
+    width: 80%;
+    height: 200px;
+    border-radius: 10px;
+    left: 10%;
+    border: 7px solid #393434;
+    top: 0;
+}
+
+.cab-texto-1 {
+    position: relative;
+    left: 50%;
+    top: 49%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    font-size: xx-large;
+    font-family: CustomFont;
+    color: white;
+}
+
+.cab-texto-2 {
+    position: relative;
+    left: 50%;
+    top: 51%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    font-size: large;
+    font-family: CustomFont;
+    color: white;
+}
+
+.imagem-eu {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    top: 50%;
+    left: 5%;
+    transform: translate(-0%,-50%);
+    border: 7px solid #393434;
+}
+
+.imagem-genshin {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    top: 50%;
+    right: 5%;
+    transform: translate(-0%,-50%);
+    border: 7px solid #393434;
+}
+
+/*---------------------------------------------------------------------*/
+
+.corpo {
+    position: relative;
+    background-color: rgba(57,52,52,0.9);
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    border: 7px solid #393434;
+    left: 10%;
+    top: 20px;
+}
+
+.corpo-conteudo {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.corpo-descricao-1 {
+    position: relative;
+    font-size: xx-large;
+    text-align: center;
+    font-family: CustomFont;
+    color: white;
+}
+
+.corpo-descricao-2 {
+    position: relative;
+    margin-top: 20px;
+    font-size: small;
+    font-family: CustomFont;
+    color: white;
+    text-align: justify;
+}
+
+.corpo-descricao-2 p {
+    text-indent: 35px;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+.corpo-descricao-3 {
+    position: relative;
+    margin-top: 40px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: CustomFont;
+    color: white;
+}
+
+/*---------------------------------------------------------------------*/
+
+.equipas-slideshow {
+    position: relative;
+    margin-top: 20px;
+    width: 61.4vw;
+    max-width: 90vw;
+    height: 59.2vh;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    transition: 1s;
+}
+
+.slideshow img {
+    width: 60vw;
+    height: auto;
+    border-radius: 1%;
+    border: 10px solid #393434;
+    cursor: pointer;
+}
+
+.proximo, .anterior {
+    position: absolute;
+    background-color: rgba(57,52,52,0.7);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    font-size: xx-large;
+    font-family: CustomFont;
+    color: white;
+    z-index: 10;
+}
+
+.proximo:hover, .anterior:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.7);
+    color: #393434;
+}
+
+.proximo {
+    top: 50%;
+    right: 3%;
+    transform: translate(-0%,-50%);
+}
+
+.anterior {
+    top: 50%;
+    left: 3%;
+    transform: translate(-0%,-50%);
+}
+
+/*---------------------------------------------------------------------*/
+
+.planet-waves {
+    position: relative;
+    height: 850px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.titulo1 {
+    position: relative;
+    margin-top: 40px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: CustomFont;
+    color: white;
+}
+
+.grupo-botoes {
+    margin-top: 20px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.klee-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Klee.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 7px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.klee-rad.checked {
+        background-color: #c99400;
+        border: 7px solid #805e01;
+    }
+
+.ayaka-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Ayaka.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 7px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ayaka-rad.checked {
+        background-color: #c99400;
+        border: 7px solid #805e01;
+    }
+
+.ningguang-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Ningguang.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 7px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ningguang-rad.checked {
+        background-color: #7200c9;
+        border: 7px solid #490180;
+    }
+
+.zhongli-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Zhongli.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 7px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.zhongli-rad.checked {
+        background-color: #c99400;
+        border: 7px solid #805e01;
+    }
+
+/*---------------------------------------------------------------------*/
+
+.planet-waves-container {
+    display: flex;
+    align-content: center;
+    margin-top: 20px;
+}
+
+.planet-waves-container img{
+    position: absolute;
+    width: auto;
+    height: 600px;
+    right: 50%;
+    display: flex;
+    opacity: 0;
+}
+
+.planet-waves-container img.show1 {
+    opacity: 1;
+    transition: transform 2s ease-in-out;
+    transform: translateX(0);
+}
+
+.planet-waves-container img.hide1 {
+    transition: tranform 2s ease-in-out;
+    transform: translateX(-1000px);
+}
+
+.planet-waves-container img.hide2 {
+    transition: transform 2s ease-in-out;
+    transform: translateX(-1000px);
+}
+
+.klee-bot, .ayaka-bot, .ningguang-bot, .zhongli-bot {
+    margin-top: 20px;
+    display: flex;
+    position: absolute;
+    left: 75%;
+    justify-content: center;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.klee-bot.show1, .ayaka-bot.show1, .ningguang-bot.show1, .zhongli-bot.show1 {
+    opacity: 1;
+    transition: transform 2s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.klee-bot.hide1, .ayaka-bot.hide1, .ningguang-bot.hide1, .zhongli-bot.hide1 {
+    transition: tranform 2s ease-in-out;
+    transform: translateX(330%);
+}
+
+.klee-bot.hide2, .ayaka-bot.hide2, .ningguang-bot.hide2, .zhongli-bot.hide2 {
+    transition: transform 2s ease-in-out;
+    transform: translateX(330%);
+}
+
+.solar {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Solar_Pearl.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 5px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.solar.checked {
+    background-color: #7200c9;
+    border: 5px solid #490180;
+}
+
+.shim {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/shimenawa's_reminiscence.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.shim.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.bcls {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Blackcliff_Longsword.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 5px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bcls.checked {
+    background-color: #7200c9;
+    border: 5px solid #490180;
+}
+
+.blizz {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/blizzard_strayer.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.blizz.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.memdust {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/Memory_of_Dust.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.memdust.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.archpet1 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/archaic_petra.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.archpet1.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.catch {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/Planet Waves/The_Catch.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 5px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.catch.checked {
+    background-color: #7200c9;
+    border: 5px solid #490180;
+}
+
+.archpet2 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/archaic_petra.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.archpet2.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.plus {
+    font-family: CustomFont;
+    font-size: xx-large;
+    color: white;
+    justify-content: center;
+     transform: translateY(25%);
+}
+
+.nobob1 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/noblesse_oblige.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nobob1.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+/*---------------------------------------------------------------------*/
+
+.d4c {
+    position: relative;
+    height: 850px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.titulo2 {
+    position: relative;
+    margin-top: 40px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: CustomFont;
+    color: white;
+}
+
+.raiden-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Raiden.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 7px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.raiden-rad.checked {
+        background-color: #c99400;
+        border: 7px solid #805e01;
+    }
+
+.xingqiu-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Xingqiu.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 7px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.xingqiu-rad.checked {
+        background-color: #7200c9;
+        border: 7px solid #490180;
+    }
+
+.xiangling-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Xiangling.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 7px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.xiangling-rad.checked {
+        background-color: #7200c9;
+        border: 7px solid #490180;
+    }
+
+.bennett-rad {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Bennett.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 7px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bennett-rad.checked {
+        background-color: #7200c9;
+        border: 7px solid #490180;
+    }
+
+/*---------------------------------------------------------------------*/
+
+.d4c-container {
+    display: flex;
+    align-content: center;
+    margin-top: 20px;
+}
+
+.d4c-container img{
+    position: absolute;
+    width: auto;
+    height: 600px;
+    left: 50%;
+    display: flex;
+    opacity: 0;
+}
+
+.d4c-container img.show2{
+    opacity: 1;
+    transition: transform 2s ease-in-out;
+    transform: translateX(0);
+}
+
+.d4c-container img.hide3 {
+    transition: tranform 2s ease-in-out;
+    transform: translateX(1000px);
+}
+
+.d4c-container img.hide4 {
+    transition: transform 2s ease-in-out;
+    transform: translateX(1000px);
+}
+
+.raiden-bot, .xingqiu-bot, .xiangling-bot, .bennett-bot {
+    margin-top: 20px;
+    display: flex;
+    position: absolute;
+    right: 75%;
+    justify-content: center;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.raiden-bot.show2, .xingqiu-bot.show2, .xiangling-bot.show2, .bennett-bot.show2 {
+    opacity: 1;
+    transition: transform 2s ease-in-out;
+    transform: translateX(50%);
+}
+
+.raiden-bot.hide3, .xingqiu-bot.hide3, .xiangling-bot.hide3, .bennett-bot.hide3 {
+    transition: tranform 2s ease-in-out;
+    transform: translateX(-330%);
+    opacity: 0;
+}
+
+.raiden-bot.hide4, .xingqiu-bot.hide4, .xiangling-bot.hide4, .bennett-bot.hide4 {
+    transition: transform 2s ease-in-out;
+    transform: translateX(-330%);
+}
+
+.primo {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Primordial_Jade_Winged-Spear.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.primo.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.emblem1 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/emblem_of_severed_fate.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.emblem1.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.sacr {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Sacrificial_Sword.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #8a05f0;
+    border: 5px solid #7200c9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sacr.checked {
+    background-color: #7200c9;
+    border: 5px solid #490180;
+}
+
+.emblem2 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/emblem_of_severed_fate.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.emblem2.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.skyspi {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Skyward_Spine.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.skyspi.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.emblem3 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/emblem_of_severed_fate.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.emblem3.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.aqui {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Teams/D4C/Aquila_Favonia.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.aqui.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+.nobob2 {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../Dados/Genshin_html_images/Artifacts/noblesse_oblige.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #f0b205;
+    border: 5px solid #c99400;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nobob2.checked {
+    background-color: #c99400;
+    border: 5px solid #805e01;
+}
+
+/*---------------------------------------------------------------------*/
+
+.klee-textos, .ayaka-textos, .ningguang-textos, .zhongli-textos{
+    font-family: CustomFont;
+    color: white;
+    margin-bottom: 42%;
+    bottom: 0;
+    position: absolute;
+    left: 52.5%;
+    width: 45%;
+}
+
+.klee-textos p, .ayaka-textos p, .ningguang-textos p, .zhongli-textos p {
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+.raiden-textos, .xingqiu-textos, .xiangling-textos, .bennett-textos {
+    font-family: CustomFont;
+    color: white;
+    margin-bottom: 42%;
+    bottom: 0;
+    position: absolute;
+    right: 52.5%;
+    width: 45%;
+}
+
+.raiden-textos p, .xingqiu-textos p, .xiangling-textos p, .bennett-textos p {
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+.titulo3 {
+    position: absolute;
+    bottom: 0;
+    font-size: large;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.corpo-descricao-4 {
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    font-size: small;
+    text-align: justify;
+}
+
+/*---------------------------------------------------------------------*/
+
+.klee-textos.show1, .ayaka-textos.show1, .ningguang-textos.show1, .zhongli-textos.show1 {
+    opacity: 1;
+    transition: transform 2s ease-in-out;
+    transform: translateX(0);
+}
+
+.klee-textos.hide1, .ayaka-textos.hide1, .ningguang-textos.hide1, .zhongli-textos.hide1 {
+    transition: tranform 2s ease-in-out;
+    transform: translateX(1000px);
+    opacity: 0;
+}
+
+.klee-textos.hide2, .ayaka-textos.hide2, .ningguang-textos.hide2, .zhongli-textos.hide2 {
+    transition: transform 2s ease-in-out;
+    transform: translateX(1000px);
+}
+
+.raiden-textos.show2, .xingqiu-textos.show2, .xiangling-textos.show2, .bennett-textos.show2 {
+    opacity: 1;
+    transition: transform 2s ease-in-out;
+    transform: translateX(0);
+}
+
+.raiden-textos.hide3, .xingqiu-textos.hide3, .xiangling-textos.hide3, .bennett-textos.hide3 {
+    transition: tranform 2s ease-in-out;
+    transform: translateX(-1000px);
+    opacity: 0;
+}
+
+.raiden-textos.hide4, .xingqiu-textos.hide4, .xiangling-textos.hide4, .bennett-textos.hide4 {
+    transition: transform 2s ease-in-out;
+    transform: translateX(-1000px);
+}
+
+.texto-solar, .texto-shim, .texto-bcls, .texto-blizz, .texto-memdust, .texto-archpet1, .texto-catch, .texto-archpet2, .texto-nobob1 {
+    opacity: 0;
+}
+
+.texto-solar.vanish, .texto-shim.vanish, .texto-bcls.vanish, .texto-blizz.vanish, .texto-memdust.vanish, .texto-archpet1.vanish, .texto-catch.vanish, .texto-archpet2.vanish, .texto-nobob1.vanish {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.texto-solar.reveal, .texto-shim.reveal, .texto-bcls.reveal, .texto-blizz.reveal, .texto-memdust.reveal, .texto-archpet1.reveal, .texto-catch.reveal, .texto-archpet2.reveal, .texto-nobob1.reveal {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.texto-primo, .texto-emblem1, .texto-sacr, .texto-emblem2, .texto-skyspi, .texto-emblem3, .texto-aqui, .texto-nobob2 {
+    opacity: 0;
+}
+
+.texto-primo.vanish, .texto-emblem1.vanish, .texto-sacr.vanish, .texto-emblem2.vanish, .texto-skyspi.vanish, .texto-emblem3.vanish, .texto-aqui.vanish, .texto-nobob2.vanish {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.texto-primo.reveal, .texto-emblem1.reveal, .texto-sacr.reveal, .texto-emblem2.reveal, .texto-skyspi.reveal, .texto-emblem3.reveal, .texto-aqui.reveal, .texto-nobob2.reveal {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/*---------------------------------------------------------------------*/
+
+.corpo-descricao-5 {
+    position: relative;
+    margin-top: 40px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: CustomFont;
+    color: white;
+}
+
+.corpo-descricao-6 {
+    position: relative;
+    margin-top: 20px;
+    font-size: small;
+    font-family: CustomFont;
+    color: white;
+    text-align: justify;
+}
+
+.corpo-descricao-6 p {
+    text-indent: 35px;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+.corpo-descricao-7 {
+    position: relative;
+    margin-top: 200px;
+    font-size: xxx-large;
+    text-align: center;
+    font-family: CustomFont;
+    color: white;
+}
+
+/*---------------------------------------------------------------------*/
+
+.botaoPlay {
+    top: 10px;
+    right: 20px;
+    position: sticky;
+    font-size: x-large;
+    background-color: rgba(57,52,52,0.7);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 3px solid rgba(57,52,52,1);
+    color: white;
+}
+
+.botaoPlay:hover {
+    background-color: rgba(255,255,255,0.7);
+    border: 3px solid rgba(255,255,255,1);
+    color: rgba(57,52,52,1);
+    cursor: pointer;
+}
+

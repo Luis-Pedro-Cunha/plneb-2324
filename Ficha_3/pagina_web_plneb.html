@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt" class="pagina-web">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="pagina_web_plneb.css">
+    <link rel="icon" type="image/x-icon" href="../Dados/Genshin_html_images/General/games-genshinimpact-icon-512x512-pb3mtbqm.ico" sizes="16x16 32x32">
+    <title>My Hobby: Genshin Impact</title>
+</head>
+<button id="botaoPlay" class="botaoPlay" onclick="toggleAudio()">⏵</button>
+<div class="cabecalho">
+    <img class="imagem-eu" src="../Dados/eu.png">
+    <img class="imagem-genshin" src="../Dados/Genshin_html_images/General/genshin_logo.jpeg">
+    <div class="cab-texto-1">My Hobby: Genshin Impact</div>
+    <div class="cab-texto-2">A minha experiência com o jogo</div>
+</div>
+<body>
+    <audio id="musiquinha" loop>
+        <source src="../Dados/Genshin_html_images/02-Dawn-Winery-ThemeGenshin-Impact.ogg" type="audio/ogg">
+    </audio>
+    <div class="corpo">
+        <div class="corpo-conteudo">
+            <div class="corpo-descricao-1">Introdução</div>
+            <div class="corpo-descricao-2">
+                <p>Com uma história emersiva, um mundo enorme para explorar e diversos personagens para conhecer, temos
+                    Genshin Impact. Este jogo, criado pela atual Hoyoverse, utiliza uma estética apelativa, estilo animação
+                    japonesa, junta com mecânicas de exploração, estilo Legend of Zelda: Breath of the Wild, e elementos de
+                    Gatcha (jogos onde novos personagens e alguns items são adquiridos por via de um sistema de loteria),
+                    resultando no desperdício de horas e horas que poderiam ser usadas a fazer algo de útil, sendo, pelo menos,
+                    horas bem passadas.
+                </p>
+                <p>
+                    Todos os fatores acima referidos, e mais alguns, foram o que tornaram este jogo num verdadeiro hobby do meu
+                    atual dia a dia. Onde passo o meu tempo a relaxar, explorar um novo mundo, conhecer novas histórias e,
+                    principalmente, abstrair-me dos meus atuais problemas e ansiedades.
+                </p>
+                <p>
+                    Nesta página gostaria, então, de dar a conhecer mais das equipas que tenho usado in-game assim como os items
+                    que lhes estão alocados. Espero que gostem!
+                </p>
+            </div>
+            <div class="corpo-descricao-3">Equipas</div>
+            <div class="equipas-slideshow">
+                <div class="slideshow">
+                    <div class="slide">
+                        <img src="../Dados/Genshin_html_images/Teams/Planet%20Waves/planet_waves.png" alt="Slide 1" onclick="scrollToSection('planet-waves')">
+                    </div>
+                    <div class="slide">
+                        <img src="../Dados/Genshin_html_images/Teams/D4C/d4c.png" alt="Slide 2" onclick="scrollToSection('d4c')">
+                    </div>
+                </div>
+                <button class="anterior" id="anterior">&#10094</button>
+                <button class="proximo" id="proximo">&#10095</button>
+            </div>
+            <div class="planet-waves" id="planet-waves">
+                <div class="titulo1">Planet Waves</div>
+                <div class="grupo-botoes">
+                    <div class="klee-rad" id="klee" name="checkbox1" value="klee" onclick="toggleButton('klee','grupo-botoes'); moveDiv1('klee');"></div>
+                    <div class="ayaka-rad" id="ayaka" name="checkbox1" value="ayaka" onclick="toggleButton('ayaka','grupo-botoes'); moveDiv1('ayaka');"></div>
+                    <div class="ningguang-rad" id="ningguang" name="checkbox1" value="ningguang" onclick="toggleButton('ningguang','grupo-botoes'); moveDiv1('ningguang');"></div>
+                    <div class="zhongli-rad" id="zhongli" name="checkbox1" value="zhongli" onclick="toggleButton('zhongli','grupo-botoes'); moveDiv1('zhongli');"></div>
+                </div>
+                <div class="planet-waves-container">
+                    <div class="klee">
+                        <img src="../Dados/Genshin_html_images/Teams/Planet%20Waves/Character_Klee_Full_Wish.png">
+                        <div class="klee-bot">
+                            <div class="solar" id="solar" name="checkbox1.1" value="solar" onclick="toggleButton('solar','klee-bot'); revealDiv1('solar','klee')"></div>
+                            <div class="shim" id="shim" name="checkbox1.1" value="shim" onclick="toggleButton('shim','klee-bot'); revealDiv1('shim','klee')"></div>
+                        </div>
+                        <div class="klee-textos">
+                            <div class="texto-solar">
+                                <div class="titulo3">Solar Pearl</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 510; CRIT Rate 27.6%</p>
+                                    <p>Solar Shine: Normal Attack hits increase Elemental Skill and Elemental Burst DMG
+                                        by 20~40% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal
+                                        Attack DMG by 20~40% for 6s.</p>
+                                </div>
+                            </div>
+                            <div class="texto-shim">
+                                <div class="titulo3">Shimenawa's Reminiscence ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: ATK +18%</p>
+                                    <p>4 Piece: When casting an Elemental Skill, if the character has 15 or more Energy,
+                                        they lose 15 Energy and Normal/Charged/Plunging Attack DMG is increased by 50% for
+                                        10s. This effect will not trigger again during that duration.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ayaka">
+                        <img src="../Dados/Genshin_html_images/Teams/Planet%20Waves/Character_Kamisato_Ayaka_Full_Wish.png">
+                        <div class="ayaka-bot">
+                            <div class="bcls" id="bcls" name="checkbox1.2" value="bcls" onclick="toggleButton('bcls','ayaka-bot'); revealDiv1('bcls','ayaka')"></div>
+                            <div class="blizz" id="blizz" name="checkbox1.2" value="blizz" onclick="toggleButton('blizz','ayaka-bot'); revealDiv1('blizz','ayaka')"></div>
+                        </div>
+                        <div class="ayaka-textos">
+                            <div class="texto-bcls">
+                                <div class="titulo3">Blackcliff Longsword</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 565; CRIT DMG 36.8%</p>
+                                    <p>Press the Advantage: After defeating an opponent, ATK is increased by 12~24% for
+                                        30s. This effect has a maximum of 3 stacks, and the duration of each stack is
+                                        independent of the others.</p>
+                                </div>
+                            </div>
+                            <div class="texto-blizz">
+                                <div class="titulo3">Blizzard Strayer ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Cryo DMG Bonus +15%</p>
+                                    <p>4 Piece: When a character attacks an opponent affected by Cryo,
+                                        their CRIT Rate is increased by 20%. If the opponent is Frozen,
+                                        CRIT Rate is increased by an additional 20%.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ningguang">
+                        <img src="../Dados/Genshin_html_images/Teams/Planet%20Waves/Character_Ningguang_Full_Wish.png">
+                        <div class="ningguang-bot">
+                            <div class="memdust" id="memdust" name="checkbox1.3" value="memdust" onclick="toggleButton('memdust','ningguang-bot'); revealDiv1('memdust','ningguang')"></div>
+                            <div class="archpet1" id="archpet1" name="checkbox1.3" value="archpet1" onclick="toggleButton('archpet1','ningguang-bot'); revealDiv1('archpet1','ningguang')"></div>
+                        </div>
+                        <div class="ningguang-textos">
+                            <div class="texto-memdust">
+                                <div class="titulo3">Memory of Dust</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 608; ATK 33.1%</p>
+                                    <p>Golden Majesty: Increases Shield Strength by 20~40%. Scoring hits on opponents
+                                        increases ATK by 4~8% for 8s. Max 5 stacks. Can only occur once every 0.3s. While
+                                        protected by a shield, this ATK increase effect is increased by 100%.</p>
+                                </div>
+                            </div>
+                            <div class="texto-archpet1">
+                                <div class="titulo3">Archaic Petra ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Geo DMG Bonus +15%</p>
+                                    <p>4 Piece: Upon obtaining an Elemental Shard created through a Crystallize Reaction,
+                                        all party members gain 35% DMG Bonus for that particular element for 10s. Only one
+                                        form of Elemental DMG Bonus can be gained in this manner at any one time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zhongli">
+                        <img src="../Dados/Genshin_html_images/Teams/Planet%20Waves/Character_Zhongli_Full_Wish.png">
+                        <div class="zhongli-bot">
+                            <div class="catch" id="catch" name="checkbox1.4" value="catch" onclick="toggleButton('catch','zhongli-bot'); revealDiv1('catch','zhongli')"></div>
+                            <div class="archpet2" id="archpet2" name="checkbox1.4" value="archpet2" onclick="toggleButton('archpet2','zhongli-bot'); revealDiv1('archpet2','zhongli')"></div>
+                            <div class="plus">+</div>
+                            <div class="nobob1" id="nobob1" name="checkbox1.4" value="nobob1" onclick="toggleButton('nobob1','zhongli-bot'); revealDiv1('nobob1','zhongli')"></div>
+                        </div>
+                        <div class="zhongli-textos">
+                            <div class="texto-catch">
+                                <div class="titulo3">The Catch</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 510; Energy Recharge 45.9%</p>
+                                    <p>Shanty: Increases Elemental Burst DMG by 16~32% and Elemental Burst CRIT
+                                        Rate by 6~12%.</p>
+                                </div>
+                            </div>
+                            <div class="texto-archpet2">
+                                <div class="titulo3">Archaic Petra ②</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Geo DMG Bonus +15%</p>
+                                </div>
+                            </div>
+                            <div class="texto-nobob1">
+                                <div class="titulo3">Noblesse Oblige ②</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Elemental Burst DMG +20%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d4c" id="d4c">
+                <div class="titulo2">Dirty Deeds Done Dirt Cheap</div>
+                <div class="grupo-botoes">
+                    <div class="raiden-rad" id="raiden" name="checkbox2" value="raiden" onclick="toggleButton('raiden','grupo-botoes'); moveDiv2('raiden');"></div>
+                    <div class="xingqiu-rad" id="xingqiu" name="checkbox2" value="xingqiu" onclick="toggleButton('xingqiu','grupo-botoes'); moveDiv2('xingqiu');"></div>
+                    <div class="xiangling-rad" id="xiangling" name="checkbox2" value="xiangling" onclick="toggleButton('xiangling','grupo-botoes'); moveDiv2('xiangling');"></div>
+                    <div class="bennett-rad" id="bennett" name="checkbox2" value="bennett" onclick="toggleButton('bennett','grupo-botoes'); moveDiv2('bennett');"></div>
+                </div>
+                <div class="d4c-container">
+                    <div class="raiden">
+                        <img src="../Dados/Genshin_html_images/Teams/D4C/Character_Raiden_Shogun_Full_Wish.png">
+                        <div class="raiden-bot">
+                            <div class="primo" id="primo" name="checkbox2.1" value="primo" onclick="toggleButton('primo','raiden-bot'); revealDiv2('primo','raiden')"></div>
+                            <div class="emblem1" id="emblem1" name="checkbox2.1" value="emblem1" onclick="toggleButton('emblem1','raiden-bot'); revealDiv2('emblem1','raiden')"></div>
+                        </div>
+                        <div class="raiden-textos">
+                            <div class="texto-primo">
+                                <div class="titulo3">Primordial Jade Winged Spear</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 674; CRIT Rate 22.1%</p>
+                                    <p>Eagle Spear of Justice: On hit, increases ATK by 3.2~6.0% for 6s. Max 7 stacks.
+                                        This effect can only occur once every 0.3s. While in possession of the maximum
+                                        possible stacks, DMG dealt is increased by 12~24%.</p>
+                                </div>
+                            </div>
+                            <div class="texto-emblem1">
+                                <div class="titulo3">Emblem of Severed Fate ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Energy Recharge +20%</p>
+                                    <p>4 Piece: Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of
+                                        75% bonus DMG can be obtained in this way.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xingqiu">
+                        <img src="../Dados/Genshin_html_images/Teams/D4C/Character_Xingqiu_Full_Wish.png">
+                        <div class="xingqiu-bot">
+                            <div class="sacr" id="sacr" name="checkbox2.2" value="sacr" onclick="toggleButton('sacr','xingqiu-bot'); revealDiv2('sacr','xingqiu')"></div>
+                            <div class="emblem2" id="emblem2" name="checkbox2.2" value="emblem2" onclick="toggleButton('emblem2','xingqiu-bot'); revealDiv2('emblem2','xingqiu')"></div>
+                        </div>
+                        <div class="xingqiu-textos">
+                            <div class="texto-sacr">
+                                <div class="titulo3">Sacrificial Sword</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 454; Energy Recharge 61.3%</p>
+                                    <p>Composed: After dealing damage to an opponent with an Elemental Skill, the skill
+                                        has a 40~80% chance to end its own CD. Can only occur once every 30~16s.</p>
+                                </div>
+                            </div>
+                            <div class="texto-emblem2">
+                                <div class="titulo3">Emblem of Severed Fate ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Energy Recharge +20%</p>
+                                    <p>4 Piece: Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of
+                                        75% bonus DMG can be obtained in this way.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xiangling">
+                        <img src="../Dados/Genshin_html_images/Teams/D4C/Character_Xiangling_Full_Wish.png">
+                        <div class="xiangling-bot">
+                            <div class="skyspi" id="skyspi" name="checkbox2.3" value="skyspi" onclick="toggleButton('skyspi','xiangling-bot'); revealDiv2('skyspi','xiangling')"></div>
+                            <div class="emblem3" id="emblem3" name="checkbox2.3" value="emblem3" onclick="toggleButton('emblem3','xiangling-bot'); revealDiv2('emblem3','xiangling')"></div>
+                        </div>
+                        <div class="xiangling-textos">
+                            <div class="texto-skyspi">
+                                <div class="titulo3">Skyward Spine</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 674; Energy Recharge 36.8%</p>
+                                    <p>Black Wing: Increases CRIT Rate by 8~16% and increases Normal ATK SPD by 12%.
+                                        Additionally, Normal and Charged Attacks hits on opponents have a 50% chance
+                                        to trigger a vacuum blade that deals 40~100% of ATK as DMG in a small AoE.
+                                        This effect can occur no more than once every 2s.</p>
+                                </div>
+                            </div>
+                            <div class="texto-emblem3">
+                                <div class="titulo3">Emblem of Severed Fate ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Energy Recharge +20%</p>
+                                    <p>4 Piece: Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of
+                                        75% bonus DMG can be obtained in this way.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bennett">
+                        <img src="../Dados/Genshin_html_images/Teams/D4C/Character_Bennett_Full_Wish.png">
+                        <div class="bennett-bot">
+                            <div class="aqui" id="aqui" name="checkbox2.4" value="aqui" onclick="toggleButton('aqui','bennett-bot'); revealDiv2('aqui','bennett')"></div>
+                            <div class="nobob2" id="nobob2" name="checkbox2.4" value="nobob2" onclick="toggleButton('nobob2','bennett-bot'); revealDiv2('nobob2','bennett')"></div>
+                        </div>
+                        <div class="bennett-textos">
+                            <div class="texto-aqui">
+                                <div class="titulo3">Aquila Favonia</div>
+                                <div class="corpo-descricao-4">
+                                    <p>Base ATK: 674; Physical DMG Bonus 41.3%</p>
+                                    <p>Falcon's Defiance: ATK is increased by 20~40%. Triggers on taking DMG: the soul
+                                        of the Falcon of the West awakens, holding the banner of the resistance aloft,
+                                        regenerating HP equal to 100~160% of ATK and dealing 200~320% of ATK as DMG to
+                                        surrounding opponents. This effect can only occur once every 15s.</p>
+                                </div>
+                            </div>
+                            <div class="texto-nobob2">
+                                <div class="titulo3">Noblesse Oblige ④</div>
+                                <div class="corpo-descricao-4">
+                                    <p>2 Piece: Elemental Burst DMG +20%</p>
+                                    <p>4 Piece: Using an Elemental Burst increases all party members' ATK by 20% for
+                                        12s. This effect cannot stack.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="corpo-descricao-5">Últimas Observações</div>
+            <div class="corpo-descricao-6">
+                <p>Gostava de guardar esta última parte para agradecer pela oportunidade de fazer este trabalho, foi um
+                grande desafio, especialmente o JavaScript, mas, para além de formativo, também foi bastante divertido.
+                O facto do tema ser livre e acerca de um hobby tornou o processo muito mais entusiasmante e fácil de
+                manter a concentração. Para todos os que virem este ficheiro, espero que tenham gostado!</p>
+            </div>
+            <div class="corpo-descricao-7">To be continued???</div>
+        </div>
+    </div>
+    <script src="pagina_web_plneb.js"></script>
+</body>
+</html>
