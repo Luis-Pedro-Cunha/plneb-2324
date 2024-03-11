@@ -1,6 +1,5 @@
 # plneb-2324
 
----
 Olá, o meu nome é Luís Cunha! No momento em que estou a 
 escrever esta introdução encontro-me a realizar o meu 
 mestrado (Engenharia Biomédica Ramo de Informática Médica) 
@@ -18,7 +17,7 @@ was completed for the PLNEB course in 2023/2024's
 academic year.
 ---
 <div style="text-align:center">
-    <img src="Dados/eu.png" style="width: 300px;
+    <img src="Dados/eu.png" style="width: 100px;
     height: auto; border-radius: 10%">
 </div>
 
