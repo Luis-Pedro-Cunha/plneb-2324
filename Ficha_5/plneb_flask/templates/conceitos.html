@@ -1,0 +1,15 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+<ul class="list-group">
+    {% for conceito in conceitos %}
+
+        <a href="/conceitos/{{ conceito }}" class="list-group-item list-group-item-action list-group-item-light">{{ conceito }}</a>
+
+    {% endfor %}
+</ul>
+{% endblock %}

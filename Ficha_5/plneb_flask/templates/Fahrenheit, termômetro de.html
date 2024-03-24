@@ -1,0 +1,20 @@
+
+            {% extends 'parent.html' %}
+        
+            {% block head %}
+            <title>{{ title }}</title>
+            {% endblock %}
+            
+            {% block body %}
+            <p class='fs-1' style='text-align: center; text-decoration-line: underline; text-transform: capitalize; text-shadow: 2px 2px grey;'>
+            Fahrenheit, termômetro de
+            </p>
+            <p class='fs-5' style='text-align: justify; padding-left: 20%; padding-right: 20%'>
+            Termômetro com graduação de Fahrenheit, marcando 32 graus na congelação e 212 graus na ebulição, 
+
+
+convertida em ºC, escala usada no Brasil, através da seguinte fórmula: ºC = ((F - 32 x 5) / 9). O termo advém de 
+Daniel Gabriel Fahrenheit, físico alemão (168
+            </p>
+            {% endblock %}
+            
