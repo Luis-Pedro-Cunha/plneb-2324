@@ -1,0 +1,27 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+<ul class="list-group">
+    {% for conceito in conceitos %}
+
+        <a id="{{ conceito }}" href="#" class="list-group-item list-group-item-action list-group-item-light" onclick="estou_sem_ideias('{{ conceito }}')">{{ conceito }}</a>
+
+    {% endfor %}
+</ul>
+<script>
+    function estou_sem_ideias(conceito) {
+        var conceitozinho = conceito;
+        console.log("Conceitozinho 1:", conceitozinho);
+        conceitozinho = conceitozinho.replace(/\//g, "%");
+        conceitozinho = conceitozinho.replace(/ /g, "$");
+        console.log("Conceitozinho 2:", conceitozinho);
+        var linkUrl = "/conceitos/" + conceitozinho;
+        console.log("Link URL:", linkUrl);
+        document.getElementById(conceito).href = linkUrl;
+    }
+</script>
+{% endblock %}
