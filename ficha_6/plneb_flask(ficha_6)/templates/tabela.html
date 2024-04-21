@@ -1,0 +1,28 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+    <div style="margin: 20px; border-color: black; border-radius: 10px">
+        <table id="tabelinhalinda" class="table table-striped" style="border-color: black; border-radius: 10px">
+            <thead>
+                <tr>
+                    <th>Termo</th>
+                    <th>Descrição</th>
+                    <th>Tradução EN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for conceito in conceitos %}
+                    <tr>
+                        <td>{{ conceito }}</td>
+                        <td>{{ conceitos[conceito]["desc"] }}</td>
+                        <td>{{ conceitos[conceito]["en"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

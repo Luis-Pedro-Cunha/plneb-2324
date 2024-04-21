@@ -1,0 +1,24 @@
+{% extends 'parent.html' %}
+
+    {% block head %}
+        <title>{{ title }}</title>
+    {% endblock %}
+
+    {% block body %}
+        <p class='fs-1' style='text-align: center; text-decoration-line: underline; text-transform: capitalize; text-shadow: 2px 2px grey;'>
+            {{ entrada[0] }}
+        </p>
+        <p class='fs-5' style='text-align: justify; padding-left: 20%; padding-right: 20%'>
+            {{ entrada[1] }}
+        </p>
+        <p class='fs-3' style='text-align: center; text-shadow: 2px 2px grey;'>
+            Tradução para o inglês:
+        </p>
+        <p class='fs-5' style='text-align: center; padding-left: 20%; padding-right: 20%'>
+            {{ entrada[2] }}
+        </p>
+        <div style="position: relative; margin-top: 20px; left: 50%; transform: translateX(-50%); width: fit-content">
+            <a href="/conceitos" type="button" class="btn btn-primary" style="background-color: #393434; border-color: black">Voltar</a>
+            <button class="btn btn-primary" onclick='delete_conceito({{entrada[0]|tojson}})' style="background-color: #393434; border-color: black"> Apagar </button>
+        </div>
+    {% endblock %}

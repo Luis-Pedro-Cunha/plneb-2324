@@ -1,0 +1,86 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+    <style>
+        .list-group-item{
+            color: white;
+            background-color: #393434
+        }
+
+        .list-group-item:hover{
+            background-color: #545252;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="card text-center" style="margin-top: 5px; margin-bottom: 5px">
+  <div class="card-header">
+     <h3> Adicionar conceito novo </h3>
+  </div>
+</div>
+
+<form action="/conceitos" method="POST" style="padding: 25px; background-color: #393434; border-radius: 10px">
+
+  <div class="form-group">
+    <label for="InputDesignacao" style="color: white">Designação:</label>
+    <input type="text" class="form-control" id="InputDesignacao" name="designacao" required>
+  </div>
+
+  <div class="form-group">
+    <label for="InputDescricao" style="color: white">Descrição:</label>
+    <input type="text" class="form-control" id="InputDescricao" name ="descricao" required>
+  </div>
+
+  <div class="form-group">
+    <label for="InputEN" style="color: white">Tradução EN:</label>
+    <input type="text" class="form-control" id="InputEN" name ="en" required>
+  </div>
+  <button type="submit" class="btn btn-primary mt-3" style="position: relative; color: black; background-color: white; border-color: black; left: 50%; transform: translateX(-50%)">Submeter</button>
+</form>
+
+    <div class="card text-center" style="margin-top: 5px; margin-bottom: 5px">
+  <div class="card-header">
+     <h3> Pesquisar por termo do dicionário ou conteúdo </h3>
+  </div>
+</div>
+
+<form action="/conceitos" method="POST" style="padding: 25px; background-color: #393434; border-radius: 10px">
+
+  <div class="form-group">
+    <label for="InputDesignacao" style="color: white">Termo a procurar:</label>
+    <input type="text" class="form-control" id="InputTermo" name="termo" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3" style="position: relative; color: black; background-color: white; border-color: black; left: 50%; transform: translateX(-50%)">Pesquisa</button>
+</form>
+
+<div class="card text-center" style="margin-top: 5px; margin-bottom: 5px">
+  <div class="card-header">
+     <h3> Conceitos </h3>
+  </div>
+</div>
+
+<ul class="list-group">
+    {% for conceito in conceitos %}
+
+        <a id="{{ conceito }}" href="#" class="list-group-item" onclick="estou_sem_ideias('{{ conceito }}')">{{ conceito }}</a>
+
+    {% endfor %}
+</ul>
+<script>
+    function estou_sem_ideias(conceito) {
+        var conceitozinho = conceito;
+        console.log("Conceitozinho 1:", conceitozinho);
+        conceitozinho = conceitozinho.replace(/\//g, "%");
+        conceitozinho = conceitozinho.replace(/ /g, "$");
+        console.log("Conceitozinho 2:", conceitozinho);
+        var linkUrl = "/conceitos/" + conceitozinho;
+        console.log("Link URL:", linkUrl);
+        document.getElementById(conceito).href = linkUrl;
+    }
+</script>
+{% endblock %}
