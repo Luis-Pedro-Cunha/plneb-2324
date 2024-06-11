@@ -1,0 +1,62 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+<style>
+    .texto-home {
+        margin-top: 0;
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 5px;
+        padding: 7px;
+        text-align: center;
+        width: fit-content;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .texto-home h1{
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .info-adicional {
+        text-align: center;
+    }
+    .info-adicional img {
+        margin-top: 20px;
+        max-width: 500px; /* Defina o tamanho máximo desejado */
+        height: auto;
+        border: 10px solid rgba(255,255,255,0.7);
+        border-radius: 5px;
+    }
+    .trabalho-realizado {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 5px;
+        padding: 7px;
+        text-align: center;
+        margin-top: 20px;
+        width: fit-content;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .trabalho-realizado p{
+        margin-bottom: 0;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <div class="texto-home">
+        <h1>Trabalho Prático 2 - Processamento de Linguagem Natural</h1>
+    </div>
+
+    <div class="info-adicional">
+        <img src="static/imagem1.jpg" alt="Descrição da imagem">
+    </div>
+
+    <div class="trabalho-realizado">
+        <p>Trabalho realizado com ❤ por Ana Patrícia Costa pg53062, Inês Mendes pg53875 e Luís Cunha pg54020</p>
+    </div>
+{% endblock %}

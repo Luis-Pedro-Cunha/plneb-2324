@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt" style="overflow-x: hidden">
+<head>
+    {% block head %}
+    {% endblock %}
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <p>Termos Médicos</p>
+    </header>
+    <button id="toggleSidebar" class="toggleSidebar">≡</button>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Conceitos">Conceitos</a></li>
+            <li>
+                <a class="collapsible" href="javascript:void(0)">Categorias</a>
+                <div class="sublist-container" style="display: none">
+                    <ul class="sublist">
+                        {% for categoria in categorias %}
+                                <li><a href="/{{ categoria }}">{{ categoria }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+    <script>
+        function updateSidebarTop() {
+            var headerHeight = document.querySelector('.header').offsetHeight;
+            document.querySelector('.sidebar').style.top = headerHeight + 'px';
+        }
+
+        updateSidebarTop();
+
+        window.addEventListener('resize', updateSidebarTop);
+
+        document.querySelectorAll('.collapsible').forEach(item => {
+            item.addEventListener('click', function() {
+                var sublist = this.nextElementSibling;
+                sublist.style.display === 'none' ? sublist.style.display = 'block' : sublist.style.display = 'none';
+            });
+        });
+
+        const toggleButton = document.getElementById('toggleSidebar');
+        const sidebar = document.getElementById('sidebar');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            sidebar.classList.toggle('collapsed');
+        });
+
+        toggleButton.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+        });
+    </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

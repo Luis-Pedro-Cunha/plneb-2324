@@ -1,0 +1,238 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+<style>
+.btn-google {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    border: 3px solid #17351b;
+    background-color: #85a78c;
+    font-size: large;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn-google:hover {
+    background-color: #99bba0;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.7);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 10px;
+}
+.popup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.popup-buttons form button{
+    background-color: #85a78c;
+    border: 2px solid #17351b;
+    border-radius: 4px;
+}
+
+.popup-buttons button{
+    background-color: #85a78c;
+    border: 2px solid #17351b;
+    border-radius: 4px;
+}
+
+.popup-buttons form button:hover{
+    background-color: #99bba0;
+}
+
+.popup-buttons button:hover{
+    background-color: #99bba0;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+    <h2 id="termo">{{ title }}</h2>
+    <hr>
+    {% set descricao = conceito_info["descricao"] %}
+    {% if descricao[:3] == "Ver" %}
+        {% if descricao[-1] == "." %}
+            {% set conceito = descricao[4:-1] %}
+            <h1>Descrição</h1>
+            <p class="consultar">Consultar <a href='http://localhost:5000/conceito/{{ conceito }}'>{{ conceito }}</a>.</p>
+        {% else %}
+            {% set conceito = descricao[4:] %}
+            <h1>Descrição</h1>
+            <p class="consultar">Consultar <a href='http://localhost:5000/conceito/{{ conceito }}'>{{ conceito }}</a>.</p>
+        {% endif %}
+    {% else %}
+        <h1>Descrição</h1>
+        <p>{{ descricao }}</p>
+    <hr>
+    <a href="{{ google_url(title) }}" class="btn-google">Pesquisar no Google</a>
+    {% endif %}
+
+    {% if conceito_info["siglas"] != {} %}
+        <hr>
+        <p>Siglas presentes:</p>
+        {% for sigla in conceito_info["siglas"].keys() %}
+            <p>{{ sigla }}: {{ conceito_info["siglas"][sigla] }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {% if validation == True %}
+        <hr>
+        <p>Artigos relacionados com termos presentes nesta pesquisa segundo o "Glossário - Dicionário Médico" do MD.Saúde:</p>
+    {% endif %}
+
+    {% set descricao = conceito_info["descricao"] %}
+    {% for term in glossario.keys() %}
+        {% if term in descricao %}
+            {% set related_articles = glossario[term]["artigos relacionados"] %}
+            {% if related_articles is not none %}
+                <ul>
+                    {% for artigo in related_articles.split(",") %}
+                        <li><a href="{{ artigo.strip() }}">{{ artigo.strip() }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if art_pubmed %}
+        <hr>
+        <p>Artigos do PubMed relacionados com o termo:</p>
+        <ul>
+            {% for artigo, link in art_pubmed.items() %}
+                <li><a href="{{ link }}">{{ artigo }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <hr>
+    <a href="/editar_conceito/{{ title }}" class="botaozinho-lindo" style="padding-left: 5px; padding-right: 5px; height: 40px; padding-top: 6px; padding-bottom: 6px">Editar Conceito</a>
+    <button class="botaozinho-lindo" id="openPopup" style="padding-left: 5px; padding-right: 5px; height: 40px">Excluir Conceito</button>
+    <div id="popup-overlay" class="popup-overlay"></div>
+    <div id="popup" class="popup">
+        <p>Tem a certeza de que quer excluir o conceito?</p>
+        <div class="popup-buttons">
+            <form action="/excluir_conceito/{{ title }}" method="post">
+                <button type="submit" id="confirmBtn">Confirmar</button>
+            </form>
+            <button id="cancelBtn">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dicti = JSON.parse('{{ global_dicti|tojson|safe }}');
+
+            document.querySelectorAll('p').forEach(paragraph => {
+                let text = paragraph.innerHTML;
+
+                // Helper function to escape special regex characters in a string
+                function escapeRegExp(string) {
+                    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                }
+
+                // Substitui palavras com apenas tradução
+                Object.keys(dicti).sort((a, b) => b.length - a.length).forEach(Termo => {
+                    const traduc = dicti[Termo]["traduc"];
+                    const pop = dicti[Termo]["pop"];
+                    const sinon = dicti[Termo]["sinon"];
+                    const desc = dicti[Termo]["desc"];
+                    let titleText = ""
+
+                    if (traduc) {
+                        titleText += `Tradução para o inglês: ${traduc}`;
+                    }
+
+                    if (pop) {
+                        if (titleText === "") {
+                            titleText += `Expressão popular: ${pop}`;
+                        }
+                        else {
+                            titleText += `\nExpressão popular: ${pop}`;
+                        }
+                    }
+
+                    if (sinon) {
+                        if (titleText === "") {
+                            titleText += `Sinónimos: ${sinon}`;
+                        }
+                        else {
+                            titleText += `\nSinónimos: ${sinon}`;
+                        }
+                    }
+
+                    if (desc) {
+                        if (titleText === "") {
+                            titleText += `Descrição: ${desc}`;;
+                        }
+                        else {
+                            titleText += `\nDescrição: ${desc}`;;
+                        }
+                    }
+
+                    if (titleText !== "") {
+                        const regex = new RegExp(`(\\b${escapeRegExp(Termo)}\\b)(?![^<]*>|[^<>]*<\\/a>)`, 'g');
+                        text = text.replace(regex, `<a href='#' title='${titleText}'>$&</a>`);
+                    }
+                });
+
+                paragraph.innerHTML = text;
+            });
+
+            var btnGoogle = document.querySelector('.btn-google');
+            btnGoogle.addEventListener('click', function() {
+                var termo = document.querySelector('#termo').textContent;
+                var urlPesquisa = google_url(termo);
+                window.location.href = urlPesquisa;
+            });
+
+            function google_url(termo) {
+                var query = encodeURIComponent(termo);
+                var url = "https://www.google.com/search?q=" + query;
+                return url;
+            }
+        });
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        document.getElementById('openPopup').addEventListener('click', showPopup);
+
+        document.getElementById('cancelBtn').addEventListener('click', hidePopup);
+
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            alert('Confirmed!');
+            hidePopup();
+        });
+
+    </script>
+{% endblock %}

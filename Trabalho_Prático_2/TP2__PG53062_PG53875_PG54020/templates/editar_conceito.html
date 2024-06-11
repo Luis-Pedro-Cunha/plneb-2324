@@ -1,0 +1,21 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="card text-center mt-5" style="background-color: rgba(255,255,255,0.7); margin-bottom: 30px; margin-top: 0">
+        <div class="card-header">
+            <h3 style="margin-bottom: 0; font-weight: bold"> Editar Conceito: {{ title }} </h3>
+        </div>
+    </div>
+    <form action="/editar_conceito/{{ title }}" method="post">
+        <div class="form-group">
+            <label for="nova_descricao" style="font-weight: bold">Nova Descrição:</label>
+            <input type="text" class="form-control" id="nova_descricao" name="nova_descricao" value="{{ conceito_info['descricao'] }}" style="background-color: rgba(255,255,255,0.7)">
+        </div>
+        <button type="submit" class="botaozinho-lindo">Guardar</button>
+    </form>
+{% endblock %}

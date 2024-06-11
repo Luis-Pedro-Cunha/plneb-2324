@@ -1,0 +1,26 @@
+{% extends 'parent.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+    {% if title != "Outro" %}
+        <div class="card text-center mt-5" style="background-color: rgba(255,255,255,0.7); margin-bottom: 30px; margin-top: 0">
+            <div class="card-header">
+                <h3 style="margin-bottom: 0; font-weight: bold"> {{ title }} </h3>
+            </div>
+        </div>
+    {% else %}
+        <div class="card text-center mt-5" style="background-color: rgba(255,255,255,0.7); margin-bottom: 30px; margin-top: 0">
+            <div class="card-header">
+                <h3 style="margin-bottom: 0; font-weight: bold"> Outros Termos </h3>
+            </div>
+        </div>
+    {% endif %}
+    <div class="list-group" style="margin-bottom: 50px">
+        {% for termo in termos_cat %}
+            <a href="http://localhost:5000/conceito/{{termo}}" class="list-group-item list-group-item-action" style="background-color: rgba(255,255,255,0.7)">{{ termo }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
